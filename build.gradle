@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.3.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'com.palantir.docker' version '0.25.0'
+    id 'com.palantir.docker-compose' version '0.25.0'
+    id "com.github.lkishalmi.gatling" version "3.0.2"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools'
+    implementation group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.5.1'
+
+    compileOnly group: 'io.gatling.highcharts', name: 'gatling-charts-highcharts', version: '3.3.1'
+}
+
+docker {
+    name project.name
+    files "build/libs/${bootJar.archiveFileName.get()}"
+    buildArgs([JAR_FILE: bootJar.archiveFileName.get()])
+}
+
+dockerCompose {
+    dockerComposeFile 'docker-compose.yml'
+}
