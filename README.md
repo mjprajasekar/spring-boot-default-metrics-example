@@ -5,7 +5,7 @@ Actuator module:
 * Outbound request metrics for `RestTemplate` and `WebClient`
 * JVM metrics
 
-For a full explanation see the accompanying *Spring Boot default metrics* article at [tomgregory.com](https://tomgregory.com/spring-boot-default-metrics)
+For a full explanation see the accompanying *Spring Boot default metrics* article at [tomgregory.com](https://tomgregory.com/spring-boot-default-metrics) or [YouTube video](https://youtu.be/ASvIXCKZgdQ).
 
 ## Prerequisites
 
