@@ -50,6 +50,8 @@ Try out these simple queries on [Prometheus](http://localhost:9090):
 `rate(http_server_requests_seconds_count[1m])`
 #### Inbound request average duration 
 `rate( http_server_requests_seconds_sum[1m]) / rate(http_server_requests_seconds_count[1m])`
+#### Inbound request 95th percentile
+`http_server_requests_seconds{quantile="0.95"}`
 #### Outbound request average duration 
 `rate(http_client_requests_seconds_sum[1m]) / rate(http_client_requests_seconds_count[1m])`
 #### JVM used heap memory
