@@ -65,3 +65,6 @@ To stop all the applications in this project, just run:
 ```
 ./gradlew dockerComposeDown
 ```
+
+## Need further support?
+Contact me if you need help at tom@tomgregory.com.
